@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vaulty | Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: #e0f7fa;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        .centered-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .big-logo {
+            width: 180px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #00ffcc;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 15px;
+            color: #00e6e6;
+            border: 2px solid #00e6e6;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #00e6e6;
+            color: #121212;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+  <div class="centered-container">
+    
+    <!-- 👇 Logo Added Here -->
+    <div class="logo-container">
+      <img src="{{ url_for('static', filename='images/vaulty_logo.jpg') }}" alt="Vaulty Logo" class="big-logo">
+    </div>
+
+    <h1>Welcome to <strong>Vaulty</strong></h1>
+    <p class="subheading">The smart money app for teens</p>
+
+    <div class="cta-buttons">
+      <a href="{{ url_for('register') }}">Register</a>
+      <a href="{{ url_for('login') }}">Login</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 Vaulty. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vaulty | Spend</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="home">
+    <div class="card">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class="flash">
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+
+        <h2>Spend from Vaulty</h2>
+        <div class="wallet">
+            <p><strong>Wallet:</strong> ₹{{ user.balance }}</p>
+            <p><strong>Daily Limit:</strong> ₹{{ user.limit }}</p>
+        </div>
+        <form method="POST">
+            <input type="number" name="amount" placeholder="Enter amount to spend" required><br>
+            <button type="submit" class="btn">Spend</button>
+        </form>
+        <br>
+        <a href="{{ url_for('dashboard', username=user.username) }}">
+            <button class="btn">← Back to Wallet</button>
+        </a>
+    </div>
+</body>
+</html>

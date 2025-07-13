@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ user.username }}'s Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+
+    <h1>Welcome, {{ user.username }}!</h1>
+    <p><strong>Phone:</strong> {{ user.phone }}</p>
+    <p><strong>Balance:</strong> ₹{{ user.balance }}</p>
+
+    <h2>Your QR Code</h2>
+    <img src="{{ url_for('static', filename='qr/' + user.username + '.png') }}" alt="QR Code" width="200">
+
+    <!-- New CTA Buttons -->
+    <div class="cta-buttons">
+      <a href="{{ url_for('spendpage', username=user.username) }}">Send Money</a>
+      <a href="{{ url_for('history', username=user.username) }}">Transaction History</a>
+    </div>
+
+    <!-- Optional: Contacts section -->
+    <h2>Your Contacts</h2>
+    {% if contacts %}
+      <ul>
+        {% for contact in contacts %}
+          <li>
+            {{ contact.username }}
+            <form method="POST" action="{{ url_for('send_money', username=user.username) }}" style="display:inline;">
+              <input type="hidden" name="to_user" value="{{ contact.username }}">
+              <input type="number" name="amount" placeholder="Amount" min="1" required>
+              <button type="submit">Send</button>
+            </form>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No contacts available.</p>
+    {% endif %}
+
+  </div>
+</body>
+</html>

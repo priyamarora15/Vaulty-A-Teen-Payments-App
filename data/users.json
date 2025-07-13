@@ -1,0 +1,51 @@
+[
+    {
+        "username": "Ishan",
+        "password": "1415",
+        "phone": "8708597588",
+        "balance": 2280.0,
+        "history": [
+            "You received \u20b9100 from Monifa",
+            "You received \u20b980 from user1"
+        ]
+    },
+    {
+        "username": "user1",
+        "password": "789",
+        "phone": "8147522614",
+        "balance": 2250.0,
+        "history": [
+            "You sent \u20b920 to Priyam15",
+            "You received \u20b9800 from yakshit",
+            "You sent \u20b980 to Ishan",
+            "You received \u20b950 from mg"
+        ]
+    },
+    {
+        "username": "Monifa",
+        "password": "1234",
+        "phone": "5588778899",
+        "balance": 75000.0,
+        "history": [
+            "You sent \u20b9100 to Ishan"
+        ]
+    },
+    {
+        "username": "yakshit",
+        "password": "741",
+        "phone": "7878788888",
+        "balance": 6000.0,
+        "history": [
+            "You sent \u20b9800 to user1"
+        ]
+    },
+    {
+        "username": "mg",
+        "password": "98172",
+        "phone": "9817290431",
+        "balance": 1950.0,
+        "history": [
+            "You sent \u20b950 to user1"
+        ]
+    }
+]
